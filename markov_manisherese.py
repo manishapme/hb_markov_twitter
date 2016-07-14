@@ -73,6 +73,8 @@ def make_text(chains):
 
         try:
             next_random_word = choice(chains[current_key])
+            if len(text) + 1 + len(next_random_word) > 140:
+                break
             text += " " + next_random_word
             if text[-1].isalnum() or text[-1] == "," or text[-1] == "-":
 
@@ -104,7 +106,7 @@ def tweet(chain_result):
 
     # print api.VerifyCredentials()
 
-    status = api.PostUpdate(chain_result[:140])
+    status = api.PostUpdate(chain_result)
     print status.text
 
 
