@@ -75,5 +75,9 @@ text = open_and_read_file(filenames)
 # Get a Markov chain
 chains = make_chains(text)
 
+# Get a Markov chain
+text = make_text(chains)
+print text
+
 # Your task is to write a new function tweet, that will take chains as input
 # tweet(chains)
